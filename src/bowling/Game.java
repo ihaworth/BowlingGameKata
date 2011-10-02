@@ -2,7 +2,6 @@ package bowling;
 
 public class Game
 {
-    private int score;
     private Frame[] frames = new Frame[10];
     private int currentFrame;
 
@@ -18,8 +17,6 @@ public class Game
         
         if (currentFrame().isOver())
             currentFrame++;
-        
-        score += pins;
     }
 
     private Frame currentFrame()
