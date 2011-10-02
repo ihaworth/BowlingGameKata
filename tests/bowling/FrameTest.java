@@ -2,6 +2,7 @@ package bowling;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -46,5 +47,14 @@ public class FrameTest
         frame.roll(1);
 
         assertFalse(frame.isOver());
+    }
+    
+    @Test
+    public void testFrameWithTwoRollsIsOver()
+    {
+        frame.roll(1);
+        frame.roll(1);
+
+        assertTrue(frame.isOver());
     }
 }
