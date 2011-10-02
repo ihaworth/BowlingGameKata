@@ -70,4 +70,13 @@ public class LastFrameTest
 
         assertFalse(lastFrame.isOver());
     }
+
+    @Test
+    public void testLastFrameIsOverWithTwoRollsAndPinsLeft()
+    {
+        lastFrame.roll(3);
+        lastFrame.roll(5);
+
+        assertTrue(lastFrame.isOver());
+    }
 }
