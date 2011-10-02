@@ -8,6 +8,6 @@ public class Frame
 
     public Object score()
     {
-        return -1;
+        return 0;
     }
 }
