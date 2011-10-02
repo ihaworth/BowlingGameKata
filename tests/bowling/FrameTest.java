@@ -80,4 +80,13 @@ public class FrameTest
         
         assertFalse(frame.isSpare());
     }
+
+    @Test
+    public void testAllPinsWithTwoRollsIsASpare()
+    {
+        frame.roll(3);
+        frame.roll(7);
+        
+        assertTrue(frame.isSpare());
+    }
 }
