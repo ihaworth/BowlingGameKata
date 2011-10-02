@@ -29,6 +29,9 @@ public class Game
 
     public int score()
     {
+        int score = 0;
+        for (Frame frame : frames)
+            score += frame.score();
         return score;
     }
 }
