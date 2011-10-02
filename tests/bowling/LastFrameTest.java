@@ -1,5 +1,6 @@
 package bowling;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -78,5 +79,14 @@ public class LastFrameTest
         lastFrame.roll(5);
 
         assertTrue(lastFrame.isOver());
+    }
+    
+    @Test
+    public void testScoreOfOrdinaryLastFrameIsTotalOfPinsKnockedDown()
+    {
+        lastFrame.roll(2);
+        lastFrame.roll(6);
+        
+        assertEquals(8, lastFrame.score());
     }
 }
