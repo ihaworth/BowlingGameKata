@@ -3,18 +3,19 @@ package bowling;
 public class Game
 {
     private static final int NUM_FRAMES = 10;
+    private static final int LAST_FRAME = NUM_FRAMES - 1;
     
     private Frame[] frames = new Frame[NUM_FRAMES];
     private int currentFrame;
 
     public Game()
     {
-        for (int i = 0; i < NUM_FRAMES - 1; i++)
+        for (int i = 0; i < LAST_FRAME; i++)
             frames[i] = new Frame();
         
-        frames[NUM_FRAMES - 1] = new LastFrame();
+        frames[LAST_FRAME] = new LastFrame();
         
-        for (int i = 0; i < NUM_FRAMES - 1; i++)
+        for (int i = 0; i < LAST_FRAME; i++)
             frames[i].setNextFrame(frames[i + 1]);
     }
 
