@@ -27,4 +27,9 @@ public class Frame
     {
         return rolls[1];
     }
+
+    public boolean isOver()
+    {
+        return false;
+    }
 }
