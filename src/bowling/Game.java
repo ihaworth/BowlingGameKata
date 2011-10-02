@@ -9,8 +9,10 @@ public class Game
 
     public Game()
     {
-        for (int i = 0; i < NUM_FRAMES; i++)
+        for (int i = 0; i < NUM_FRAMES - 1; i++)
             frames[i] = new Frame();
+        
+        frames[NUM_FRAMES - 1] = new LastFrame();
         
         for (int i = 0; i < NUM_FRAMES - 1; i++)
             frames[i].setNextFrame(frames[i + 1]);
