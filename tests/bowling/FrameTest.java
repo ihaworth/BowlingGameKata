@@ -115,4 +115,12 @@ public class FrameTest
         
         assertFalse(frame.isStrike());
     }
+
+    @Test
+    public void testAllPinsWithFirstRollIsAStrike()
+    {
+        frame.roll(10);
+        
+        assertTrue(frame.isStrike());
+    }
 }
