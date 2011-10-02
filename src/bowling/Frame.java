@@ -2,7 +2,9 @@ package bowling;
 
 public class Frame
 {
-    private int[] rolls = new int[2];
+    private static final int MAX_ROLLS = 2;
+
+    private int[] rolls = new int[MAX_ROLLS];
     private int currentRoll = 0;
 
     public void roll(int pins)
@@ -13,6 +15,16 @@ public class Frame
 
     public int score()
     {
-        return rolls[0] + rolls[1];
+        return firstRoll() + secondRoll();
+    }
+
+    private int firstRoll()
+    {
+        return rolls[0];
+    }
+
+    private int secondRoll()
+    {
+        return rolls[1];
     }
 }
