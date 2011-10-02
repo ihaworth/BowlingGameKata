@@ -66,7 +66,7 @@ public class Frame
 
     public boolean isOver()
     {
-        return isStrike() || currentRoll == 2;
+        return isStrike() || currentRoll == MAX_ROLLS;
     }
 
     public boolean isSpare()
