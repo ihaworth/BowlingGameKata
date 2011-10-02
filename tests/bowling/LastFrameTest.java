@@ -42,4 +42,13 @@ public class LastFrameTest
 
         assertTrue(lastFrame.isOver());
     }
+
+    @Test
+    public void testLastFrameIsNotOverWithASpare()
+    {
+        lastFrame.roll(3);
+        lastFrame.roll(7);
+
+        assertFalse(lastFrame.isOver());
+    }
 }
