@@ -1,6 +1,7 @@
 package bowling;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,5 +32,11 @@ public class FrameTest
         frame.roll(1);
         
         assertEquals(2, frame.score());
+    }
+    
+    @Test
+    public void testFrameWithNoRollsIsNotOver()
+    {
+        assertFalse(frame.isOver());
     }
 }
