@@ -90,13 +90,13 @@ public class FrameTest
         assertTrue(frame.isSpare());
     }
 
-//    @Test
-//    public void testAllPinsWithOneRollsIsNotASpare()
-//    {
-//        frame.roll(10);
-//        
-//        assertFalse(frame.isSpare());
-//    }
+    @Test
+    public void testAllPinsWithOneRollsIsNotASpare()
+    {
+        frame.roll(10);
+        
+        assertFalse(frame.isSpare());
+    }
     
     @Test
     public void testNotAllPinsIsNotAStrike()
