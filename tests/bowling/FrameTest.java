@@ -16,4 +16,15 @@ public class FrameTest
         
         assertEquals(0, frame.score());
     }
+    
+    @Test
+    public void testAllOnes()
+    {
+        Frame frame = new Frame();
+        
+        frame.roll(1);
+        frame.roll(1);
+        
+        assertEquals(2, frame.score());
+    }
 }
