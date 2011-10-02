@@ -42,4 +42,9 @@ public class Frame
     {
         return currentRoll == 2;
     }
+
+    public boolean isSpare()
+    {
+        return false;
+    }
 }
