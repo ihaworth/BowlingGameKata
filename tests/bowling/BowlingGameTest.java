@@ -9,7 +9,11 @@ public class BowlingGameTest
     @Test
     public void testGutterGame()
     {
-        new Game();
+        Game g = new Game();
+        
+        for (int i = 0; i < 20; i++)
+            g.roll(0);
+        
         fail("Not yet implemented");
     }
 }
