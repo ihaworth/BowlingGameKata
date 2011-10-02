@@ -23,7 +23,7 @@ public class FrameTest
         frame.roll(0);
         frame.roll(0);
         
-        assertEquals(0, frame.score());
+        assertEquals(0, frame.scoreWithBouns());
     }
     
     @Test
@@ -32,7 +32,7 @@ public class FrameTest
         frame.roll(1);
         frame.roll(1);
         
-        assertEquals(2, frame.score());
+        assertEquals(2, frame.scoreWithBouns());
     }
     
     @Test
@@ -78,7 +78,7 @@ public class FrameTest
         nextFrame.roll(6);
         nextFrame.roll(3);
         
-        assertEquals(16, frame.score());
+        assertEquals(16, frame.scoreWithBouns());
     }
 
     @Test
@@ -92,7 +92,7 @@ public class FrameTest
         nextFrame.roll(6);
         nextFrame.roll(3);
         
-        assertEquals(19, frame.score());
+        assertEquals(19, frame.scoreWithBouns());
     }
 
     @Test
@@ -107,7 +107,7 @@ public class FrameTest
         nextFrame.roll(10);
         nextButOneFrame.roll(5);
         
-        assertEquals(25, frame.score());
+        assertEquals(25, frame.scoreWithBouns());
     }
 
     @Test

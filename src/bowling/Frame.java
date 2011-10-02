@@ -31,7 +31,7 @@ public class Frame
         currentRoll++;
     }
 
-    public int score()
+    public int scoreWithBouns()
     {
         if (isStrike())
             return MAX_SCORE + nextFrame.strikeBonusForPreviousFrame();

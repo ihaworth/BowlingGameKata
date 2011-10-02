@@ -96,7 +96,7 @@ public class LastFrameTest
         lastFrame.roll(2);
         lastFrame.roll(6);
         
-        assertEquals(8, lastFrame.score());
+        assertEquals(8, lastFrame.scoreWithBouns());
     }
 
     @Test
@@ -105,7 +105,7 @@ public class LastFrameTest
         rollSpare(4);
         lastFrame.roll(2);
         
-        assertEquals(12, lastFrame.score());
+        assertEquals(12, lastFrame.scoreWithBouns());
     }
 
     @Test
@@ -115,7 +115,7 @@ public class LastFrameTest
         lastFrame.roll(6);
         lastFrame.roll(2);
         
-        assertEquals(18, lastFrame.score());
+        assertEquals(18, lastFrame.scoreWithBouns());
     }
     
     @Test

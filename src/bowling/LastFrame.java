@@ -25,7 +25,7 @@ public class LastFrame extends Frame
     }
 
     @Override
-    public int score()
+    public int scoreWithBouns()
     {
         return firstRoll() + secondRoll() + thirdRoll();
     }

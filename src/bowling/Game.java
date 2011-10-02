@@ -41,7 +41,7 @@ public class Game
     {
         int score = 0;
         for (Frame frame : frames)
-            score += frame.score();
+            score += frame.scoreWithBouns();
         return score;
     }
 }
