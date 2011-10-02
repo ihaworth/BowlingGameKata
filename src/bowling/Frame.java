@@ -42,7 +42,10 @@ public class Frame
 
     int strikeBonusForPreviousFrame()
     {
-        return firstRoll() + secondRoll();
+        if (isStrike())
+            return firstRoll() + nextFrame.firstRoll();
+        else
+            return firstRoll() + secondRoll();
     }
 
     int spareBonusForPreviousFrame()
