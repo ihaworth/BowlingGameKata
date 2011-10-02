@@ -21,7 +21,7 @@ public class LastFrame extends Frame
     @Override
     int strikeBonusForPreviousFrame()
     {
-        return 0;
+        return firstRoll() + secondRoll();
     }
 
     @Override
