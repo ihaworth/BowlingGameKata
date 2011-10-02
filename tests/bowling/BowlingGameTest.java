@@ -9,6 +9,7 @@ public class BowlingGameTest
     @Test
     public void testGutterGame()
     {
+        new Game();
         fail("Not yet implemented");
     }
 }
