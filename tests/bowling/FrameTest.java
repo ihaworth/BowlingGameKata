@@ -1,16 +1,23 @@
 package bowling;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class FrameTest
 {
+    private Frame frame;
+
+    @Before
+    public void setup()
+    {
+        frame = new Frame();
+    }
+    
     @Test
     public void testGutterFrame()
     {
-        Frame frame = new Frame();
-        
         frame.roll(0);
         frame.roll(0);
         
@@ -20,8 +27,6 @@ public class FrameTest
     @Test
     public void testAllOnes()
     {
-        Frame frame = new Frame();
-        
         frame.roll(1);
         frame.roll(1);
         
