@@ -50,6 +50,6 @@ public class Frame
 
     public boolean isStrike()
     {
-        return false;
+        return firstRoll() == 10;
     }
 }
