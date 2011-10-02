@@ -91,7 +91,7 @@ public class FrameTest
     }
 
     @Test
-    public void testAllPinsWithOneRollsIsNotASpare()
+    public void testAStrikeIsNotASpare()
     {
         frame.roll(10);
         
