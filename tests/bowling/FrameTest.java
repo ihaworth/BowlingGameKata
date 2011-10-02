@@ -57,4 +57,18 @@ public class FrameTest
 
         assertTrue(frame.isOver());
     }
+    
+    @Test
+    public void testScoreSpareFrameDependsUponNextFrame()
+    {
+        Frame nextFrame = new Frame();
+        frame.setNextFrame(nextFrame);
+        
+        frame.roll(3);
+        frame.roll(7);
+        
+        nextFrame.roll(6);
+        
+        assertEquals(16, frame.score());
+    }
 }
