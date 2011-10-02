@@ -5,7 +5,7 @@ public class Frame
     private static final int MAX_ROLLS = 2;
 
     private int[] rolls = new int[MAX_ROLLS];
-    private int currentRoll = 0;
+    protected int currentRoll = 0;
 
     private Frame nextFrame;
 
