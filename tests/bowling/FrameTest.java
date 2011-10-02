@@ -80,7 +80,7 @@ public class FrameTest
         
         assertEquals(16, frame.score());
     }
-    
+
     @Test
     public void testScoreStrikeFrameGetsBonusFromNextFrame()
     {
@@ -93,6 +93,21 @@ public class FrameTest
         nextFrame.roll(3);
         
         assertEquals(19, frame.score());
+    }
+
+    @Test
+    public void testScoreStrikeFollowedByStrikeGetsBonusFromNextFrameAndNextButOneFrame()
+    {
+        Frame nextFrame = new Frame();
+        Frame nextButOneFrame = new Frame();
+        frame.setNextFrame(nextFrame);
+        nextFrame.setNextFrame(nextButOneFrame);
+        
+        frame.roll(10);
+        nextFrame.roll(10);
+        nextButOneFrame.roll(5);
+        
+        assertEquals(25, frame.score());
     }
 
     @Test
