@@ -14,6 +14,7 @@ public class LastFrame extends Frame
     public boolean isOver()
     {
         return isStrike() && currentRoll == 3 ||
-                isSpare() && currentRoll == 3;
+                isSpare() && currentRoll == 3 ||
+                !isStrike() && !isSpare() && currentRoll == 2;
     }
 }
