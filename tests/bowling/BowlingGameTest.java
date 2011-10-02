@@ -35,13 +35,13 @@ public class BowlingGameTest
         assertEquals(20, g.score());
     }
     
-//    @Test
-//    public void testOneSpare()
-//    {
-//        g.roll(5);
-//        g.roll(5);  // Spare
-//        g.roll(3);
-//        rollMany4(17, 0);
-//        assertEquals(16, g.score());
-//    }
+    @Test
+    public void testOneSpare()
+    {
+        g.roll(5);
+        g.roll(5);  // Spare
+        g.roll(3);
+        rollMany4(17, 0);
+        assertEquals(16, g.score());
+    }
 }
