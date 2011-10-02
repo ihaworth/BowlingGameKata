@@ -6,6 +6,7 @@ public class Game
 
     public void roll(int pins)
     {
+        new Frame().roll(pins);
         score += pins;
     }
 
