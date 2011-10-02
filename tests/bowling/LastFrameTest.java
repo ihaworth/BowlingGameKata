@@ -19,11 +19,12 @@ public class LastFrameTest
     }
 
     @Test
-    public void testLastFrameIsOverWithOneStrikeAndAnotherRoll()
+    public void testLastFrameIsOverWithOneStrikeAndTwoMoreRoll()
     {
         lastFrame = new LastFrame();
         lastFrame.roll(10);
         lastFrame.roll(5);
+        lastFrame.roll(3);
 
         assertTrue(lastFrame.isOver());
     }
