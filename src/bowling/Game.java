@@ -11,6 +11,9 @@ public class Game
     {
         for (int i = 0; i < NUM_FRAMES; i++)
             frames[i] = new Frame();
+        
+        for (int i = 0; i < NUM_FRAMES - 1; i++)
+            frames[i].setNextFrame(frames[i + 1]);
     }
 
     public void roll(int pins)
