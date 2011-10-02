@@ -19,6 +19,12 @@ public class LastFrame extends Frame
     }
 
     @Override
+    int strikeBonusForPreviousFrame()
+    {
+        return 0;
+    }
+
+    @Override
     public int score()
     {
         return firstRoll() + secondRoll() + thirdRoll();
