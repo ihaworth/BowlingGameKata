@@ -45,6 +45,6 @@ public class Frame
 
     public boolean isSpare()
     {
-        return firstRoll() + secondRoll() == 10;
+        return !isStrike() && firstRoll() + secondRoll() == 10;
     }
 }
