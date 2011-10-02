@@ -57,6 +57,14 @@ public class FrameTest
 
         assertTrue(frame.isOver());
     }
+
+    @Test
+    public void testFrameWithAStrikeIsOver()
+    {
+        frame.roll(10);
+
+        assertTrue(frame.isOver());
+    }
     
     @Test
     public void testScoreSpareFrameGetsBonusFromNextFrame()
