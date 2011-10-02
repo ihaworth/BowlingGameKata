@@ -30,6 +30,6 @@ public class Frame
 
     public boolean isOver()
     {
-        return false;
+        return currentRoll == 2;
     }
 }
