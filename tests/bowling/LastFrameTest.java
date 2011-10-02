@@ -17,10 +17,22 @@ public class LastFrameTest
         lastFrame = new LastFrame();
     }
 
+    private void rollStrike()
+    {
+        lastFrame.roll(10);
+    }
+
+    private void rollSpare(int pins)
+    {
+        lastFrame.roll(pins);
+        lastFrame.roll(10 - pins);
+    }
+    
+
     @Test
     public void testLastFrameIsNotOverWithOneStrike()
     {
-        lastFrame.roll(10);
+        rollStrike();
 
         assertFalse(lastFrame.isOver());
     }
@@ -28,7 +40,7 @@ public class LastFrameTest
     @Test
     public void testLastFrameIsNotOverWithOneStrikeAndOneMoreRoll()
     {
-        lastFrame.roll(10);
+        rollStrike();
         lastFrame.roll(5);
 
         assertFalse(lastFrame.isOver());
@@ -37,7 +49,7 @@ public class LastFrameTest
     @Test
     public void testLastFrameIsOverWithOneStrikeAndTwoMoreRoll()
     {
-        lastFrame.roll(10);
+        rollStrike();
         lastFrame.roll(5);
         lastFrame.roll(3);
 
@@ -47,8 +59,7 @@ public class LastFrameTest
     @Test
     public void testLastFrameIsNotOverWithASpare()
     {
-        lastFrame.roll(3);
-        lastFrame.roll(7);
+        rollSpare(3);
 
         assertFalse(lastFrame.isOver());
     }
@@ -56,9 +67,7 @@ public class LastFrameTest
     @Test
     public void testLastFrameIsOverWithASpareAndOneMoreRoll()
     {
-        lastFrame.roll(3);
-        lastFrame.roll(7);
-
+        rollSpare(3);
         lastFrame.roll(6);
 
         assertTrue(lastFrame.isOver());
@@ -93,18 +102,16 @@ public class LastFrameTest
     @Test
     public void testScoreOfSpareLastFrameIsTotalOfPinsInThreeRolls()
     {
-        lastFrame.roll(4);
-        lastFrame.roll(6);
-        
+        rollSpare(4);
         lastFrame.roll(2);
         
         assertEquals(12, lastFrame.score());
     }
-    
+
     @Test
     public void testScoreOfStrikeLastFrameIsTotalOfPinsInThreeRolls()
     {
-        lastFrame.roll(10);
+        rollStrike();
         lastFrame.roll(6);
         lastFrame.roll(2);
         
