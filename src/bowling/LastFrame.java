@@ -5,17 +5,17 @@ public class LastFrame extends Frame
     private static final int MAX_ROLLS = 3;
 
     @Override
-    protected void init()
+    public boolean isOver()
     {
-        rolls = new int[MAX_ROLLS];
+        return isStrike() && allRollsHaveBeenMade() ||
+                isSpare() && allRollsHaveBeenMade() ||
+                !isStrike() && !isSpare() && twoRollsHaveBeenMade();
     }
 
     @Override
-    public boolean isOver()
+    protected int maxRolls()
     {
-        return isStrike() && currentRoll == MAX_ROLLS ||
-                isSpare() && currentRoll == MAX_ROLLS ||
-                !isStrike() && !isSpare() && currentRoll == 2;
+        return MAX_ROLLS;
     }
 
     @Override

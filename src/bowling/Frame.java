@@ -6,7 +6,7 @@ public class Frame
     private static final int MAX_SCORE = 10;
 
     protected int[] rolls;
-    protected int currentRoll = 0;
+    private int currentRoll = 0;
 
     private Frame nextFrame;
 
@@ -15,9 +15,9 @@ public class Frame
         init();
     }
 
-    protected void init()
+    private void init()
     {
-        rolls = new int[MAX_ROLLS];
+        rolls = new int[maxRolls()];
     }
 
     public void setNextFrame(Frame nextFrame)
@@ -66,7 +66,22 @@ public class Frame
 
     public boolean isOver()
     {
-        return isStrike() || currentRoll == MAX_ROLLS;
+        return isStrike() || allRollsHaveBeenMade();
+    }
+
+    protected boolean allRollsHaveBeenMade()
+    {
+        return currentRoll == maxRolls();
+    }
+    
+    protected boolean twoRollsHaveBeenMade()
+    {
+        return currentRoll == 2;
+    }
+
+    protected int maxRolls()
+    {
+        return MAX_ROLLS;
     }
 
     public boolean isSpare()
