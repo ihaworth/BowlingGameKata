@@ -89,7 +89,7 @@ public class LastFrameTest
         
         assertEquals(8, lastFrame.score());
     }
-    
+
     @Test
     public void testScoreOfSpareLastFrameIsTotalOfPinsInThreeRolls()
     {
@@ -99,5 +99,15 @@ public class LastFrameTest
         lastFrame.roll(2);
         
         assertEquals(12, lastFrame.score());
+    }
+    
+    @Test
+    public void testScoreOfStrikeLastFrameIsTotalOfPinsInThreeRolls()
+    {
+        lastFrame.roll(10);
+        lastFrame.roll(6);
+        lastFrame.roll(2);
+        
+        assertEquals(18, lastFrame.score());
     }
 }
