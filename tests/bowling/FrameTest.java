@@ -9,6 +9,11 @@ public class FrameTest
     @Test
     public void testGutterFrame()
     {
-        fail("Not yet implemented");
+        Frame frame = new Frame();
+        
+        frame.roll(0);
+        frame.roll(0);
+        
+        assertEquals(0, frame.score());
     }
 }
