@@ -38,10 +38,15 @@ public class BowlingGameTest
     @Test
     public void testOneSpare()
     {
-        g.roll(5);
-        g.roll(5);  // Spare
+        rollSpare(5);
         g.roll(3);
         rollMany4(17, 0);
         assertEquals(16, g.score());
+    }
+
+    private void rollSpare(int pins)
+    {
+        g.roll(pins);
+        g.roll(10 - pins);
     }
 }
