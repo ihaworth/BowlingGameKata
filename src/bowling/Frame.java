@@ -3,6 +3,7 @@ package bowling;
 public class Frame
 {
     private static final int MAX_ROLLS = 2;
+    private static final int MAX_SCORE = 10;
 
     protected int[] rolls;
     protected int currentRoll = 0;
@@ -33,9 +34,9 @@ public class Frame
     public int score()
     {
         if (isStrike())
-            return 10 + nextFrame.strikeBonusForPreviousFrame();
+            return MAX_SCORE + nextFrame.strikeBonusForPreviousFrame();
         else if (isSpare())
-            return 10 + nextFrame.spareBonusForPreviousFrame();
+            return MAX_SCORE + nextFrame.spareBonusForPreviousFrame();
         else
             return firstRoll() + secondRoll();
     }
@@ -70,11 +71,11 @@ public class Frame
 
     public boolean isSpare()
     {
-        return !isStrike() && firstRoll() + secondRoll() == 10;
+        return !isStrike() && firstRoll() + secondRoll() == MAX_SCORE;
     }
 
     public boolean isStrike()
     {
-        return firstRoll() == 10;
+        return firstRoll() == MAX_SCORE;
     }
 }
