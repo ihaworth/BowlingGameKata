@@ -2,12 +2,17 @@ package bowling;
 
 public class Frame
 {
+    private int[] rolls = new int[2];
+    private int currentRoll = 0;
+
     public void roll(int pins)
     {
+        rolls[currentRoll] = pins;
+        currentRoll++;
     }
 
-    public Object score()
+    public int score()
     {
-        return 0;
+        return rolls[0] + rolls[1];
     }
 }
