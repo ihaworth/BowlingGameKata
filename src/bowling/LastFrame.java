@@ -13,8 +13,8 @@ public class LastFrame extends Frame
     @Override
     public boolean isOver()
     {
-        return isStrike() && currentRoll == 3 ||
-                isSpare() && currentRoll == 3 ||
+        return isStrike() && currentRoll == MAX_ROLLS ||
+                isSpare() && currentRoll == MAX_ROLLS ||
                 !isStrike() && !isSpare() && currentRoll == 2;
     }
 
