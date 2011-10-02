@@ -22,10 +22,12 @@ public class Frame
 
     public int score()
     {
-        if (isSpare())
+        if (isStrike())
+            return 10 + nextFrame.firstRoll() + nextFrame.secondRoll();
+        else if (isSpare())
             return 10 + nextFrame.firstRoll();
-
-        return firstRoll() + secondRoll();
+        else
+            return firstRoll() + secondRoll();
     }
 
     private int firstRoll()
