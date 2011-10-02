@@ -82,11 +82,22 @@ public class LastFrameTest
     }
     
     @Test
-    public void testScoreOfOrdinaryLastFrameIsTotalOfPinsKnockedDown()
+    public void testScoreOfOrdinaryLastFrameIsTotalOfPinsInTwoRolls()
     {
         lastFrame.roll(2);
         lastFrame.roll(6);
         
         assertEquals(8, lastFrame.score());
+    }
+    
+    @Test
+    public void testScoreOfSpareLastFrameIsTotalOfPinsInThreeRolls()
+    {
+        lastFrame.roll(4);
+        lastFrame.roll(6);
+        
+        lastFrame.roll(2);
+        
+        assertEquals(12, lastFrame.score());
     }
 }
