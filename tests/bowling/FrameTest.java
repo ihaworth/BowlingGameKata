@@ -39,4 +39,12 @@ public class FrameTest
     {
         assertFalse(frame.isOver());
     }
+    
+    @Test
+    public void testFrameWithOneRollIsNotOver()
+    {
+        frame.roll(1);
+
+        assertFalse(frame.isOver());
+    }
 }
