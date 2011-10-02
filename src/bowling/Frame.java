@@ -40,12 +40,12 @@ public class Frame
             return firstRoll() + secondRoll();
     }
 
-    private int firstRoll()
+    protected int firstRoll()
     {
         return rolls[0];
     }
 
-    private int secondRoll()
+    protected int secondRoll()
     {
         return rolls[1];
     }

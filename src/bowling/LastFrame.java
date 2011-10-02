@@ -17,4 +17,15 @@ public class LastFrame extends Frame
                 isSpare() && currentRoll == 3 ||
                 !isStrike() && !isSpare() && currentRoll == 2;
     }
+
+    @Override
+    public int score()
+    {
+        return firstRoll() + secondRoll() + thirdRoll();
+    }
+
+    private int thirdRoll()
+    {
+        return rolls[2];
+    }
 }
