@@ -62,4 +62,12 @@ public class LastFrameTest
 
         assertTrue(lastFrame.isOver());
     }
+
+    @Test
+    public void testLastFrameIsNotOverWithOneRoll()
+    {
+        lastFrame.roll(3);
+
+        assertFalse(lastFrame.isOver());
+    }
 }
