@@ -2,12 +2,14 @@ package bowling;
 
 public class Game
 {
-    private Frame[] frames = new Frame[10];
+    private static final int NUM_FRAMES = 10;
+    
+    private Frame[] frames = new Frame[NUM_FRAMES];
     private int currentFrame;
 
     public Game()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < NUM_FRAMES; i++)
             frames[i] = new Frame();
     }
 
@@ -16,7 +18,12 @@ public class Game
         currentFrame().roll(pins);
         
         if (currentFrame().isOver())
-            currentFrame++;
+            moveToNextFrame();
+    }
+
+    private int moveToNextFrame()
+    {
+        return currentFrame++;
     }
 
     private Frame currentFrame()
