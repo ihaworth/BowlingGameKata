@@ -99,10 +99,19 @@ public class FrameTest
 //    }
     
     @Test
-    public void notAllPinsIsNotAStrike()
+    public void testNotAllPinsIsNotAStrike()
     {
         frame.roll(1);
         frame.roll(1);
+        
+        assertFalse(frame.isStrike());
+    }
+    
+    @Test
+    public void testASpareIsNotAStrike()
+    {
+        frame.roll(3);
+        frame.roll(7);
         
         assertFalse(frame.isStrike());
     }
