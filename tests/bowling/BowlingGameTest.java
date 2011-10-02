@@ -14,6 +14,6 @@ public class BowlingGameTest
         for (int i = 0; i < 20; i++)
             g.roll(0);
         
-        fail("Not yet implemented");
+        assertEquals(0, g.score());
     }
 }
