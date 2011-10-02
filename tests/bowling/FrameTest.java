@@ -97,4 +97,12 @@ public class FrameTest
 //        
 //        assertFalse(frame.isSpare());
 //    }
+    
+    @Test void notAllPinsInNotAStrike()
+    {
+        frame.roll(1);
+        frame.roll(1);
+        
+        assertFalse(frame.isStrike());
+    }
 }
