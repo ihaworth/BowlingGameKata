@@ -42,7 +42,7 @@ public class Frame
 
     public boolean isOver()
     {
-        return currentRoll == 2;
+        return isStrike() || currentRoll == 2;
     }
 
     public boolean isSpare()
