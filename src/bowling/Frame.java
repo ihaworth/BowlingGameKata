@@ -7,6 +7,13 @@ public class Frame
     private int[] rolls = new int[MAX_ROLLS];
     private int currentRoll = 0;
 
+    private Frame nextFrame;
+
+    public void setNextFrame(Frame nextFrame)
+    {
+        this.nextFrame = nextFrame;
+    }
+
     public void roll(int pins)
     {
         rolls[currentRoll] = pins;
