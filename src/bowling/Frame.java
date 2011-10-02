@@ -35,9 +35,14 @@ public class Frame
         if (isStrike())
             return 10 + nextFrame.firstRoll() + nextFrame.secondRoll();
         else if (isSpare())
-            return 10 + nextFrame.firstRoll();
+            return 10 + spareBonus();
         else
             return firstRoll() + secondRoll();
+    }
+
+    private int spareBonus()
+    {
+        return nextFrame.firstRoll();
     }
 
     protected int firstRoll()
