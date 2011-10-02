@@ -68,8 +68,23 @@ public class FrameTest
         frame.roll(7);
         
         nextFrame.roll(6);
+        nextFrame.roll(3);
         
         assertEquals(16, frame.score());
+    }
+    
+    @Test
+    public void testScoreStrikeFrameGetsBonusFromNextFrame()
+    {
+        Frame nextFrame = new Frame();
+        frame.setNextFrame(nextFrame);
+        
+        frame.roll(10);
+        
+        nextFrame.roll(6);
+        nextFrame.roll(3);
+        
+        assertEquals(19, frame.score());
     }
 
     @Test
