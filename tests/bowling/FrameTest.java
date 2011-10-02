@@ -71,4 +71,13 @@ public class FrameTest
 //        
 //        assertEquals(16, frame.score());
 //    }
+
+    @Test
+    public void testNotAllPinsIsNotASpare()
+    {
+        frame.roll(1);
+        frame.roll(1);
+        
+        assertFalse(frame.isSpare());
+    }
 }
