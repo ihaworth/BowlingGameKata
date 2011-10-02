@@ -117,4 +117,22 @@ public class LastFrameTest
         
         assertEquals(18, lastFrame.score());
     }
+    
+    @Test
+    public void testStrikeBonusForPreviousFrameIsTotalOfFirstTwoRolls()
+    {
+        lastFrame.roll(6);
+        lastFrame.roll(2);
+        
+        assertEquals(8, lastFrame.strikeBonusForPreviousFrame());
+    }
+    
+    @Test
+    public void testStrikeBonusForPreviousFrameIsTotalOfFirstTwoRollsWhenLastFrameStartsWithAStrike()
+    {
+        rollStrike();
+        lastFrame.roll(2);
+        
+        assertEquals(12, lastFrame.strikeBonusForPreviousFrame());
+    }
 }
