@@ -15,28 +15,22 @@ public class BowlingGameTest
         g = new Game();
     }
 
-    private void rollMany(int n, int pins)
-    {
-        for (int i = 0; i < n; i++)
-            g.roll(pins);
-    }
-
     @Test
-    public void testGutterGame()
+    public void gutterGameScoresZero()
     {
         rollMany(20, 0);
         assertEquals(0, g.score());
     }
-    
+
     @Test
-    public void testAllOnes()
+    public void allOnesScoresTwenty()
     {
         rollMany(20, 1);
         assertEquals(20, g.score());
     }
 
     @Test
-    public void testOneSpare()
+    public void oneSpareGetsSpareBouns()
     {
         rollSpare(5);
         g.roll(3);
@@ -45,7 +39,7 @@ public class BowlingGameTest
     }
 
     @Test
-    public void testOneStrike()
+    public void oneStrikeGetsStrikeBonus()
     {
         rollStrike();
         g.roll(3);
@@ -55,7 +49,7 @@ public class BowlingGameTest
     }
 
     @Test
-    public void testPerfectGame()
+    public void perfectGameScores300()
     {
         rollMany(12, 10);
         assertEquals(300, g.score());
@@ -70,5 +64,11 @@ public class BowlingGameTest
     {
         g.roll(pins);
         g.roll(10 - pins);
+    }
+
+    private void rollMany(int n, int pins)
+    {
+        for (int i = 0; i < n; i++)
+            g.roll(pins);
     }
 }

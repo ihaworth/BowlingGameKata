@@ -4,17 +4,22 @@ public class Game
 {
     private static final int NUM_FRAMES = 10;
     private static final int LAST_FRAME = NUM_FRAMES - 1;
-    
-    private Frame[] frames = new Frame[NUM_FRAMES];
+
+    private final Frame[] frames = new Frame[NUM_FRAMES];
     private int currentFrame;
 
     public Game()
     {
+        initFrames();
+    }
+
+    private void initFrames()
+    {
         for (int i = 0; i < LAST_FRAME; i++)
             frames[i] = new Frame();
-        
+
         frames[LAST_FRAME] = new LastFrame();
-        
+
         for (int i = 0; i < LAST_FRAME; i++)
             frames[i].setNextFrame(frames[i + 1]);
     }
@@ -22,7 +27,7 @@ public class Game
     public void roll(int pins)
     {
         currentFrame().roll(pins);
-        
+
         if (currentFrame().isOver())
             moveToNextFrame();
     }

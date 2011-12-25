@@ -27,10 +27,10 @@ public class LastFrameTest
         lastFrame.roll(pins);
         lastFrame.roll(10 - pins);
     }
-    
+
 
     @Test
-    public void testLastFrameIsNotOverWithOneStrike()
+    public void lastFrameIsNotOverWithOneStrike()
     {
         rollStrike();
 
@@ -38,7 +38,7 @@ public class LastFrameTest
     }
 
     @Test
-    public void testLastFrameIsNotOverWithOneStrikeAndOneMoreRoll()
+    public void lastFrameIsNotOverWithOneStrikeAndOneMoreRoll()
     {
         rollStrike();
         lastFrame.roll(5);
@@ -47,7 +47,7 @@ public class LastFrameTest
     }
 
     @Test
-    public void testLastFrameIsOverWithOneStrikeAndTwoMoreRoll()
+    public void lastFrameIsOverWithOneStrikeAndTwoMoreRolls()
     {
         rollStrike();
         lastFrame.roll(5);
@@ -57,7 +57,7 @@ public class LastFrameTest
     }
 
     @Test
-    public void testLastFrameIsNotOverWithASpare()
+    public void lastFrameIsNotOverWithASpare()
     {
         rollSpare(3);
 
@@ -65,7 +65,7 @@ public class LastFrameTest
     }
 
     @Test
-    public void testLastFrameIsOverWithASpareAndOneMoreRoll()
+    public void lastFrameIsOverWithASpareAndOneMoreRoll()
     {
         rollSpare(3);
         lastFrame.roll(6);
@@ -74,7 +74,7 @@ public class LastFrameTest
     }
 
     @Test
-    public void testLastFrameIsNotOverWithOneRoll()
+    public void lastFrameIsNotOverWithOneRoll()
     {
         lastFrame.roll(3);
 
@@ -82,57 +82,57 @@ public class LastFrameTest
     }
 
     @Test
-    public void testLastFrameIsOverWithTwoRollsAndPinsLeft()
+    public void lastFrameIsOverWithTwoRollsAndPinsLeft()
     {
         lastFrame.roll(3);
         lastFrame.roll(5);
 
         assertTrue(lastFrame.isOver());
     }
-    
+
     @Test
-    public void testScoreOfOrdinaryLastFrameIsTotalOfPinsInTwoRolls()
+    public void scoreOfOrdinaryLastFrameIsTotalOfPinsInTwoRolls()
     {
         lastFrame.roll(2);
         lastFrame.roll(6);
-        
+
         assertEquals(8, lastFrame.scoreWithBouns());
     }
 
     @Test
-    public void testScoreOfSpareLastFrameIsTotalOfPinsInThreeRolls()
+    public void scoreOfSpareLastFrameIsTotalOfPinsInThreeRolls()
     {
         rollSpare(4);
         lastFrame.roll(2);
-        
+
         assertEquals(12, lastFrame.scoreWithBouns());
     }
 
     @Test
-    public void testScoreOfStrikeLastFrameIsTotalOfPinsInThreeRolls()
+    public void scoreOfStrikeLastFrameIsTotalOfPinsInThreeRolls()
     {
         rollStrike();
         lastFrame.roll(6);
         lastFrame.roll(2);
-        
+
         assertEquals(18, lastFrame.scoreWithBouns());
     }
-    
+
     @Test
-    public void testStrikeBonusForPreviousFrameIsTotalOfFirstTwoRolls()
+    public void strikeBonusForPreviousFrameIsTotalOfFirstTwoRolls()
     {
         lastFrame.roll(6);
         lastFrame.roll(2);
-        
+
         assertEquals(8, lastFrame.strikeBonusForPreviousFrame());
     }
-    
+
     @Test
-    public void testStrikeBonusForPreviousFrameIsTotalOfFirstTwoRollsWhenLastFrameStartsWithAStrike()
+    public void strikeBonusForPreviousFrameIsTotalOfFirstTwoRollsWhenLastFrameStartsWithAStrike()
     {
         rollStrike();
         lastFrame.roll(2);
-        
+
         assertEquals(12, lastFrame.strikeBonusForPreviousFrame());
     }
 }

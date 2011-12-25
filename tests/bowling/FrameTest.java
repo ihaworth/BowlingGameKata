@@ -16,41 +16,41 @@ public class FrameTest
     {
         frame = new Frame();
     }
-    
+
     @Test
-    public void testGutterFrame()
+    public void gutterFrameScoresZero()
     {
         frame.roll(0);
         frame.roll(0);
-        
+
         assertEquals(0, frame.scoreWithBouns());
     }
-    
+
     @Test
-    public void testAllOnes()
+    public void twoOnesScoresTwo()
     {
         frame.roll(1);
         frame.roll(1);
-        
+
         assertEquals(2, frame.scoreWithBouns());
     }
-    
+
     @Test
-    public void testFrameWithNoRollsIsNotOver()
+    public void frameWithNoRollsIsNotOver()
     {
         assertFalse(frame.isOver());
     }
-    
+
     @Test
-    public void testFrameWithOneRollIsNotOver()
+    public void frameWithOneRollIsNotOver()
     {
         frame.roll(1);
 
         assertFalse(frame.isOver());
     }
-    
+
     @Test
-    public void testFrameWithTwoRollsIsOver()
+    public void frameWithTwoRollsIsOver()
     {
         frame.roll(1);
         frame.roll(1);
@@ -59,106 +59,107 @@ public class FrameTest
     }
 
     @Test
-    public void testFrameWithAStrikeIsOver()
+    public void frameWithAStrikeIsOver()
     {
         frame.roll(10);
 
         assertTrue(frame.isOver());
     }
-    
+
     @Test
-    public void testScoreSpareFrameGetsBonusFromNextFrame()
+    public void spareFrameGets1BonusFromNextFrame()
     {
         Frame nextFrame = new Frame();
         frame.setNextFrame(nextFrame);
-        
+
         frame.roll(3);
         frame.roll(7);
-        
+
         nextFrame.roll(6);
         nextFrame.roll(3);
-        
+
         assertEquals(16, frame.scoreWithBouns());
     }
 
     @Test
-    public void testScoreStrikeFrameGetsBonusFromNextFrame()
+    public void strikeFrameGets2BonuesFromNextFrame()
     {
         Frame nextFrame = new Frame();
         frame.setNextFrame(nextFrame);
-        
+
         frame.roll(10);
-        
+
         nextFrame.roll(6);
         nextFrame.roll(3);
-        
+
         assertEquals(19, frame.scoreWithBouns());
     }
 
     @Test
-    public void testScoreStrikeFollowedByStrikeGetsBonusFromNextFrameAndNextButOneFrame()
+    public void strikeFollowedByStrikeGetsBonusFromNextFrameAndNextButOneFrame()
     {
         Frame nextFrame = new Frame();
         Frame nextButOneFrame = new Frame();
         frame.setNextFrame(nextFrame);
         nextFrame.setNextFrame(nextButOneFrame);
-        
+
         frame.roll(10);
         nextFrame.roll(10);
         nextButOneFrame.roll(5);
-        
+        nextButOneFrame.roll(4);
+
         assertEquals(25, frame.scoreWithBouns());
     }
 
     @Test
-    public void testNotAllPinsIsNotASpare()
+    public void pinsLeftStandingIsNotASpare()
     {
         frame.roll(1);
         frame.roll(1);
-        
+
         assertFalse(frame.isSpare());
     }
 
     @Test
-    public void testAllPinsWithTwoRollsIsASpare()
+    public void noPinsLeftStandingWithTwoRollsIsASpare()
     {
         frame.roll(3);
         frame.roll(7);
-        
+
         assertTrue(frame.isSpare());
     }
 
     @Test
-    public void testAStrikeIsNotASpare()
+    public void aStrikeIsNotASpare()
     {
         frame.roll(10);
-        
+
         assertFalse(frame.isSpare());
     }
-    
+
     @Test
-    public void testNotAllPinsIsNotAStrike()
+    public void pinsLeftStandingIsNotAStrike()
     {
         frame.roll(1);
         frame.roll(1);
-        
-        assertFalse(frame.isStrike());
-    }
-    
-    @Test
-    public void testASpareIsNotAStrike()
-    {
-        frame.roll(3);
-        frame.roll(7);
-        
+
         assertFalse(frame.isStrike());
     }
 
     @Test
-    public void testAllPinsWithFirstRollIsAStrike()
+    public void aSpareIsNotAStrike()
+    {
+        frame.roll(3);
+        frame.roll(7);
+
+        assertFalse(frame.isStrike());
+    }
+
+    @Test
+    public void hitAllPinsWithFirstRollIsAStrike()
     {
         frame.roll(10);
-        
+
         assertTrue(frame.isStrike());
     }
 }
